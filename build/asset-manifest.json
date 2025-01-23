@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/bassam20203/HICS3/static/css/main.32fce1a4.css",
+    "main.js": "/bassam20203/HICS3/static/js/main.ec4c9539.js",
+    "static/media/1.png": "/bassam20203/HICS3/static/media/1.98e162ad885dc35faf89.png",
+    "static/media/2.png": "/bassam20203/HICS3/static/media/2.07553d63a6c5b9bfadc0.png",
+    "static/media/GE_SS_Two_Medium.otf": "/bassam20203/HICS3/static/media/GE_SS_Two_Medium.3fb3dc620fa627c8b767.otf",
+    "static/media/GE_SS_Two_Light.otf": "/bassam20203/HICS3/static/media/GE_SS_Two_Light.89204a59801e9568faf1.otf",
+    "index.html": "/bassam20203/HICS3/index.html",
+    "main.32fce1a4.css.map": "/bassam20203/HICS3/static/css/main.32fce1a4.css.map",
+    "main.ec4c9539.js.map": "/bassam20203/HICS3/static/js/main.ec4c9539.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32fce1a4.css",
+    "static/js/main.ec4c9539.js"
+  ]
+}

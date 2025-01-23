@@ -1,0 +1,42 @@
+.top-banner {
+    background-color: #5d5d5d4a; /* Added from the second version */
+    padding: 10px;
+    text-align: center;
+    position: static; 
+    bottom: 65%; /* Updated from the second version */
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+    user-select: none;
+  }
+  
+  .top-banner p {
+    margin: 0;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .top-banner button {
+    position: absolute !important;
+    left: 0px !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer !important;
+    visibility: hidden;
+  }
+  
+  .buttn {
+    padding: 0px 0px !important;
+    font-size: 1rem !important;
+    background-color: transparent !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    margin-top: 0px !important;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
