@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "../ResultsPage.css";
 import TopBanner from "../Commponant/TopBanner";
@@ -19,18 +20,14 @@ const Resalt = () => {
     setNoResult(false);
     setResult(null);
 
-    // تحديد القسم الصحيح بناءً على التخصص والمستوى
-    const searchCategory = specialization ? `${specialization}${stage}` : `BIS${stage}`;
-
     try {
       const response = await fetch(
-        `https://flask-two-gamma.vercel.app/get-result?stage=${searchCategory}&rollNumber=${rollNumber}`,
-        {
-          method: "GET",
+`https://flask-two-gamma.vercel.app/get-result?stage=${stage}&rollNumber=${rollNumber}`,
+     {
+          method: "GET", 
           headers: { "Content-Type": "application/json" },
         }
       );
-
       const data = await response.json();
       if (!data.student) {
         setNoResult(true);
@@ -70,21 +67,26 @@ const Resalt = () => {
             اختر المستوى:
             <select value={stage} onChange={handleStageChange}>
               <option value="">اختر المستوى</option>
-              <option value="1">الأول</option>
-              <option value="2">الثاني</option>
-              <option value="3">الثالث</option>
-              <option value="4">الرابع</option>
+              <option value="BIS1">الأول</option>
+              <option value="BIS2">الثاني</option>
+              <option value="BIS3">الثالث</option>
+              <option value="BIS4">الرابع</option>
             </select>
           </label>
 
           {stage && (
             <label>
               اختر التخصص:
-              <select value={specialization} onChange={handleSpecializationChange}>
+              <select
+                value={specialization}
+                onChange={handleSpecializationChange}
+              >
                 <option value="">اختر التخصص</option>
-                <option value="BIS">نظم معلومات الأعمال</option>
-                <option value="Accounting">المحاسبة والمراجعة</option>
-                {stage >= 3 && <option value="Marketing">التسويق والتجارة الإلكترونية</option>}
+                <option value="نظم">نظم معلومات الأعمال</option>
+                <option value="محاسبة">المحاسبة والمراجعة</option>
+                {stage === "BIS3" || stage === "BIS4" ? (
+                  <option value="تسويق">التسويق والتجارة الإلكترونية</option>
+                ) : null}
               </select>
             </label>
           )}
@@ -98,11 +100,13 @@ const Resalt = () => {
               placeholder="أدخل رقم الجلوس"
             />
           </label>
-
-          <button className="bty button-33" onClick={handleSearch} disabled={loading}>
+          <button
+            className="bty button-33"
+            onClick={handleSearch}
+            disabled={loading}
+          >
             {loading ? "جاري التحميل..." : "ابحث"}
           </button>
-
           {noResult && <p className="no-result">لم يتم العثور على النتيجة</p>}
         </div>
 
@@ -140,7 +144,7 @@ const Resalt = () => {
           </div>
         ) : result && result.pay === "no" ? (
           <p className="no-result">
-            رجاء الرجوع للشئون الحسابية بالمعهد
+         رجاء الرجوع للشئون الحسابية بالمعهد
           </p>
         ) : null}
       </div>
